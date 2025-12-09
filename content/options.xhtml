@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://zotero-platform/content/preferences.css"?>
+
+<linkset>
+  <html:link rel="localization" href="send_to_google_tasks.ftl"/>
+</linkset>
+
+<vbox id="zsgt-preferences"
+      xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      onload="(Zotero.SendToGoogleTasksOptions || {}).init();"
+      flex="1">
+  <groupbox>
+    <label><html:h2 data-l10n-id="send-to-google-tasks-credentials-heading"></html:h2></label>
+
+    <label data-l10n-id="send-to-google-tasks-access-token-label" control="zsgt-access-token"/>
+    <textbox id="zsgt-access-token" preference="extensions.zotero_send_to_google_tasks.access_token" flex="1"/>
+    <label class="description" data-l10n-id="send-to-google-tasks-access-token-help"/>
+
+    <separator class="thin"/>
+
+    <label data-l10n-id="send-to-google-tasks-client-id-label" control="zsgt-client-id"/>
+    <textbox id="zsgt-client-id" preference="extensions.zotero_send_to_google_tasks.client_id" flex="1"/>
+
+    <label data-l10n-id="send-to-google-tasks-client-secret-label" control="zsgt-client-secret"/>
+    <textbox id="zsgt-client-secret" preference="extensions.zotero_send_to_google_tasks.client_secret" flex="1"/>
+
+    <label data-l10n-id="send-to-google-tasks-refresh-token-label" control="zsgt-refresh-token"/>
+    <textbox id="zsgt-refresh-token" preference="extensions.zotero_send_to_google_tasks.refresh_token" flex="1"/>
+    <label class="description" data-l10n-id="send-to-google-tasks-refresh-token-help"/>
+  </groupbox>
+
+  <separator class="thin"/>
+
+  <groupbox>
+    <label><html:h2 data-l10n-id="send-to-google-tasks-settings-heading"></html:h2></label>
+
+    <label data-l10n-id="send-to-google-tasks-task-list-id-label" control="zsgt-task-list-id"/>
+    <textbox id="zsgt-task-list-id" preference="extensions.zotero_send_to_google_tasks.task_list_id" flex="1"/>
+
+    <label data-l10n-id="send-to-google-tasks-task-title-template-label" control="zsgt-task-title-template"/>
+    <textbox id="zsgt-task-title-template" preference="extensions.zotero_send_to_google_tasks.task_title_template" flex="1"/>
+
+    <label data-l10n-id="send-to-google-tasks-task-notes-template-label" control="zsgt-task-notes-template"/>
+    <textbox id="zsgt-task-notes-template" multiline="true" preference="extensions.zotero_send_to_google_tasks.task_notes_template" rows="4"/>
+    <label class="description" data-l10n-id="send-to-google-tasks-template-help"/>
+
+    <label data-l10n-id="send-to-google-tasks-due-offset-label" control="zsgt-due-offset-days"/>
+    <textbox id="zsgt-due-offset-days" type="number" min="-365" max="365" preference="extensions.zotero_send_to_google_tasks.due_offset_days" flex="1"/>
+    <label class="description" data-l10n-id="send-to-google-tasks-due-offset-help"/>
+  </groupbox>
+
+  <script src="chrome://zotero_send_to_google_tasks/content/options.js"/>
+</vbox>

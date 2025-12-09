@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "Send to Google Tasks",
+  "version": "0.1.0",
+  "description": "Create Google Tasks from Zotero attachments via the context menu.",
+  "author": "Lucas CFL",
+  "applications": {
+    "zotero": {
+      "id": "zotero_send_to_google_tasks@luascfl",
+      "update_url": "https://github.com/luascfl/zotero_send_to_google_tasks/raw/main/updates.json",
+      "strict_min_version": "7.0",
+      "strict_max_version": "8.*"
+    }
+  }
+}

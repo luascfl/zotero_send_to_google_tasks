@@ -1,0 +1,73 @@
+<!--
+    ZotMoov
+    prefs.xhtml
+    Written by Wiley Yu
+-->
+
+<linkset>
+    <html:link rel="localization" href="zotmoov.ftl"/>
+</linkset>
+
+<vbox onload="Zotero.ZotMoov.Prefs.init();">
+    <groupbox>
+        <vbox>
+            <label><html:h2 data-l10n-id="zotmoov-settings-filepath-intro"></html:h2></label>
+            <hbox align="center">
+                <html:input type="text" id="zotmoov-dst-dir" readonly="true" preference="extensions.zotmoov.dst_dir" style="flex: 1; margin-left: 0;"/>
+                <button data-l10n-id="zotmoov-settings-filepath-button-label" oncommand="Zotero.ZotMoov.Prefs.pickDirectory();"/>
+            </hbox>
+        </vbox>
+    </groupbox>
+    <groupbox>
+        <vbox>
+            <label><html:h2 data-l10n-id="zotmoov-settings-other-settings"></html:h2></label>
+            <hbox align="center">
+                <label data-l10n-id="zotmoov-settings-behavior-explanation"></label>
+                <menulist native="true" preference="extensions.zotmoov.file_behavior">
+                    <menupopup>
+                        <menuitem data-l10n-id="zotmoov-settings-behavior-move" value="move" oncommand="Zotero.ZotMoov.Prefs.updateMenuItems(this);"/>
+                        <menuitem data-l10n-id="zotmoov-settings-behavior-copy" value="copy" oncommand="Zotero.ZotMoov.Prefs.updateMenuItems(this);"/>
+                    </menupopup>
+                </menulist>
+            </hbox>
+            <checkbox native="true" preference="extensions.zotmoov.enable_automove" data-l10n-id="zotmoov-settings-enable-automove-label"/>
+            <vbox>
+                <checkbox native="true" preference="extensions.zotmoov.enable_subdir_move" data-l10n-id="zotmoov-settings-enable-subdir-move-label" oncommand="Zotero.ZotMoov.Prefs.onSubDirClick(this);"/>
+                <hbox align="center" style="margin-left: 30px;">
+                    <label for="zotmoov-subdir-str" data-l10n-id="zotmoov-settings-subdir-str"/>
+                    <html:input type="text" data-l10n-id="zotmoov-settings-subdir-str" id="zotmoov-subdir-str" preference="extensions.zotmoov.subdirectory_string" style="flex: 1;" placeholder="%c"/>
+                    <label is="zotero-text-link" data-l10n-id="zotmoov-settings-subdir-about" href="https://github.com/wileyyugioh/zotmoov/blob/master/docs/WILDCARD_INFO.md"/>
+                </hbox>
+            </vbox>
+            <checkbox native="true" preference="extensions.zotmoov.delete_files" data-l10n-id="zotmoov-settings-delete-files-label"/>
+        </vbox>
+    </groupbox>
+    <groupbox>
+        <vbox>
+            <label><html:h2 data-l10n-id="zotmoov-settings-fileext-title"></html:h2></label>
+            <hbox class="virtualized-table-container" style="display: flex; min-height: 100px; max-height: 100px;">
+                <html:div id="zotmoov-settings-fileext-tree-2"/>
+            </hbox>
+            <separator class="thin"/>
+            <hbox align="center" pack="end">
+                <label data-l10n-id="zotmoov-settings-fileext-about"></label>
+                <spacer flex="1"/>
+                <button id="zotmoov-fileext-table-delete" disabled="true" label="-" style="min-width: 80px; margin-inline-end: 6px;"
+                    oncommand="Zotero.ZotMoov.Prefs.removeFileExtEntries();"/>
+                <button id="zotmoov-fileext-table-add" label="+" style="min-width: 80px;" oncommand="Zotero.ZotMoov.Prefs.spawnFileExtDialog();"/>
+            </hbox>
+        </vbox>
+    </groupbox>
+    <groupbox style="margin-top: 20px;">
+        <hbox align="center" pack="end">
+            <button
+                style="margin-inline-end: 6px;"
+                data-l10n-id="zotmoov-kb-settings-keyboard-shortcuts"
+                oncommand="Zotero.Utilities.Internal.openPreferences('zotmoov_keyboard');"/>
+            <button id="zotmoov-adv-prefs-button"
+                data-l10n-id="zotmoov-settings-advanced-config"
+                oncommand="Zotero.Utilities.Internal.openPreferences('zotmoov_advanced');"
+            />
+        </hbox>
+    </groupbox>
+</vbox>

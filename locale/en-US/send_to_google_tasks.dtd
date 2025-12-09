@@ -1,0 +1,16 @@
+<!ENTITY preferences.title "Send to Google Tasks Preferences">
+<!ENTITY preferences.pane.label "Send to Google Tasks">
+<!ENTITY google.credentials.group "Google API Credentials">
+<!ENTITY access-token.label "Access token (optional)">
+<!ENTITY access-token.help "If provided, this token will be used directly instead of refreshing via OAuth.">
+<!ENTITY client-id.label "Client ID">
+<!ENTITY client-secret.label "Client secret">
+<!ENTITY refresh-token.label "Refresh token">
+<!ENTITY refresh-token.help "Refresh token is required unless you supply an access token manually.">
+<!ENTITY task.settings.group "Task Settings">
+<!ENTITY task-list-id.label "Task list ID">
+<!ENTITY task-title-template.label "Task title template">
+<!ENTITY task-notes-template.label "Task notes template">
+<!ENTITY template.help "Placeholders: {{attachmentTitle}}, {{attachmentFilename}}, {{parentTitle}}, {{parentAuthors}}, {{firstAuthor}}, {{itemURL}}, {{doi}}, {{selectURI}}, {{openURI}}.">
+<!ENTITY due-offset.label "Due date offset (days)">
+<!ENTITY due-offset.help "Leave empty for no due date. Positive values schedule days in the future, negative for past.">
