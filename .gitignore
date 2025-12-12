@@ -15,3 +15,4 @@ build/
 *.zip__pycache__/
 .gemini
 *.zip
+__pycache__/
