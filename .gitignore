@@ -12,4 +12,6 @@ AMO_API_SECRET.txt
 node_modules/
 dist/
 build/
+*.zip__pycache__/
+.gemini
 *.zip
