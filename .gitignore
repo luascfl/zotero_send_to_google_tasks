@@ -24,3 +24,5 @@ gemini-gcloud-key.json,
 pycache
 gcp-oauth.keys.json,
 .github/workflows/
+gemini-gcloud-key.json
+gcp-oauth.keys.json
